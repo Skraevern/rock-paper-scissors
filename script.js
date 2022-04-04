@@ -1,5 +1,6 @@
 "use strict";
-
+let playerScore = 0;
+let computerScore = 0;
 // Random cumputer selection
 let computerPlay = function () {
   let randomNumber = Math.floor(Math.random() * 3);
@@ -26,26 +27,34 @@ let capitalize = function (inputString) {
 // Game
 let singleGame = function (player, computer) {
   if (player === computer) {
+    playerScore++;
+    computerScore++;
     return `Draw! Both picked ${player}.`;
   }
   if (player === `Rock`) {
     if (computer === `Scissors`) {
+      playerScore++;
       return `Player wins. Rock beats Scissors!`;
     } else {
+      computerScore++;
       return `Computer wins! Paper beats Scissors!`;
     }
   }
   if (player === `Scissors`) {
     if (computer === `Rock`) {
+      computerScore++;
       return `Computer wins! Rock beats Scissors!`;
     } else {
+      playerScore++;
       return `Player wins! Scissors beat Paper!`;
     }
   }
   if (player === `Paper`) {
     if (computer === `Rock`) {
+      playerScore++;
       return `Player wins! Paper beats Rock!`;
     } else {
+      computerScore++;
       return `Computer wins! Scissors beat Paper!`;
     }
   }
@@ -72,6 +81,11 @@ let fiveGames = function () {
        Computer picked ${computerSelection}`
     );
     console.log(singleGame(playerSelection, computerSelection));
+  }
+  if (playerScore > computerScore) {
+    console.log(`Player wins! ${playerScore} - ${computerScore}`);
+  } else {
+    console.log(`Computer wins 5 games! ${computerScore} - ${playerScore}`);
   }
 };
 
