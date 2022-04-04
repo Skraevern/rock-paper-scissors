@@ -1,7 +1,8 @@
 "use strict";
 let playerScore = 0;
 let computerScore = 0;
-// Random cumputer selection
+
+// Random computer selection
 let computerPlay = function () {
   let randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
@@ -59,17 +60,8 @@ let singleGame = function (player, computer) {
     }
   }
 };
-/*
-let playerPrompt = prompt();
-let playerSelection = capitalize(playerPrompt);
-let computerSelection = computerPlay();
 
-console.log(
-  `Player picked ${playerSelection}. 
-Computer picked ${computerSelection}`
-);
-console.log(singleGame(playerSelection, computerSelection));
-*/
+// Plays the game five times, displays each rounds winner and the total winner after 5 games.
 let fiveGames = function () {
   for (let index = 0; index < 5; index++) {
     let playerPrompt = prompt();
