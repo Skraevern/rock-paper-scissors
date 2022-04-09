@@ -1,6 +1,21 @@
 "use strict";
 let playerScore = 0;
 let computerScore = 0;
+const displayPlayerScore = document.getElementById(`playerScore`);
+const displayComputerScore = document.getElementById(`computerScore`);
+
+displayPlayerScore.textContent = playerScore;
+displayComputerScore.textContent = computerScore;
+
+// Functions for adding scores
+let playerScoreFunction = function (score) {
+  playerScore += score;
+  displayPlayerScore.textContent = playerScore;
+};
+let computerScoreFunction = function (score) {
+  computerScore += score;
+  displayComputerScore.textContent = computerScore;
+};
 
 // Random computer selection
 let computerPlay = function () {
@@ -19,34 +34,34 @@ let computerPlay = function () {
 // Game
 let game = function (player, computer) {
   if (player === computer) {
-    playerScore++;
-    computerScore++;
+    playerScoreFunction(1);
+    computerScoreFunction(1);
     return console.log(`Draw! Both picked ${player}.`);
   }
   if (player === `Rock`) {
     if (computer === `Scissors`) {
-      playerScore++;
+      playerScoreFunction(1);
       return console.log(`Player wins. Rock beats Scissors!`);
     } else {
-      computerScore++;
+      computerScoreFunction(1);
       return console.log(`Computer wins! Paper beats Rock!`);
     }
   }
   if (player === `Scissors`) {
     if (computer === `Paper`) {
-      computerScore++;
+      playerScoreFunction(1);
       return console.log(`Player wins! Scissors beat Paper!`);
     } else {
-      playerScore++;
+      computerScoreFunction(1);
       return console.log(`Computer wins! Rock beats Scissors!`);
     }
   }
   if (player === `Paper`) {
     if (computer === `Rock`) {
-      playerScore++;
+      playerScoreFunction(1);
       return console.log(`Player wins! Paper beats Rock!`);
     } else {
-      computerScore++;
+      computerScoreFunction(1);
       return console.log(`Computer wins! Scissors beat Paper!`);
     }
   }
