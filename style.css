@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.play-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+#btn-rock {
+  background-image: url(images/img_rock.png);
+}
+#btn-paper {
+  background-image: url(images/img_paper.png);
+}
+#btn-scissors {
+  background-image: url(images/img_scissors.png);
+}
+#btn-rock,
+#btn-paper,
+#btn-scissors {
+  background-color: #cccccc;
+  background-size: 100px;
+  background-position: center;
+  height: 130px;
+  width: 100px;
+  margin: 10px 0px 10px 0px;
+}
