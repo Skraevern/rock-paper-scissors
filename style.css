@@ -17,28 +17,21 @@ h1 {
 .header-txt {
   margin: 0px;
 }
-.btn-new-game-and-text {
-  display: flex;
-  margin-left: 0px;
-  margin-right: auto;
-}
-.text-over-btns {
-  margin-left: 30px;
-}
 .play-content {
   display: flex;
 }
 .play-content-without-btns {
   display: flex;
   flex: auto;
-  margin-left: 30px;
-  margin-right: auto;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-right: 3px;
+  margin-left: auto;
 }
-.play-buttons {
+.btns-text {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+}
+.text-over-btns {
 }
 
 #btn-new-game {
@@ -63,6 +56,20 @@ h1 {
   height: 130px;
   width: 100px;
   margin: 3px 0px 3px 0px;
+}
+
+.player-content,
+.result-winner-content,
+.computer-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-score,
+.computer-score,
+.winner {
+  display: flex;
+  justify-content: center;
 }
 .player-image,
 .computer-image {
