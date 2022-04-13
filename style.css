@@ -4,7 +4,11 @@ body {
   background-color: black;
   color: white;
 }
-
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -24,18 +28,21 @@ h1 {
   display: flex;
   flex: auto;
   justify-content: space-between;
-  margin-right: 3px;
-  margin-left: auto;
+  margin: 20px;
+  background-color: #363535;
 }
 .btns-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
 }
 .text-over-btns {
 }
 
 #btn-new-game {
-  margin: 5px auto 5px 3px;
+  margin: 5px 3px 5px 3px;
   align-self: inherit;
 }
 #btn-rock {
@@ -71,11 +78,15 @@ h1 {
   display: flex;
   justify-content: center;
 }
+#playerScore,
+#computerScore {
+  padding-left: 20px;
+}
 .player-image,
 .computer-image {
   height: 400px;
-  width: auto;
-  margin: 3px;
+  width: 300px;
+  margin: 30px;
 }
 .results-image {
   width: 100px;

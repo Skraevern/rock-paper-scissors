@@ -54,6 +54,9 @@ const newGame = function () {
   btnPaper.disabled = false;
   btnScissors.disabled = false;
   displayWinner.textContent = "";
+  playerImage.src = "./images/question.png";
+  computerImage.src = "./images/question.png";
+  resultsImage.src = "./images/question.png";
 };
 
 // Random computer selection

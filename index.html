@@ -8,11 +8,6 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <div class="header">
-      <h1>Rock Paper Scissor</h1>
-      <p class="header-txt">You VS Computer</p>
-      <p class="header-txt">First to 5 points wins!</p>
-    </div>
     <div class="play-content">
       <div class="btns-text">
         <p class="text-over-btns">Make your choice!</p>
@@ -21,41 +16,48 @@
         <button id="btn-paper"></button>
         <button id="btn-scissors"></button>
       </div>
-      <div class="play-content-without-btns">
-        <div class="player-content">
-          <div class="player-score">
-            <h3>Player Score:</h3>
-            <h3 id="playerScore"></h3>
-          </div>
-          <img
-            src="/images/img_paper.png"
-            alt="player-image"
-            class="player-image"
-            id="player-image"
-          />
+      <div class="container">
+        <div class="header">
+          <h1>Rock Paper Scissor</h1>
+          <p class="header-txt">You VS Computer</p>
+          <p class="header-txt">First to 5 points wins!</p>
         </div>
-        <div class="result-winner-content">
-          <div class="winner">
-            <h3 id="winner"></h3>
+        <div class="play-content-without-btns">
+          <div class="player-content">
+            <div class="player-score">
+              <h3>Player Score:</h3>
+              <h3 id="playerScore"></h3>
+            </div>
+            <img
+              src="/images/question.png"
+              alt="player-image"
+              class="player-image"
+              id="player-image"
+            />
           </div>
-          <img
-            src="/images/player_wins.png"
-            alt="results-image"
-            class="results-image"
-            id="results-image"
-          />
-        </div>
-        <div class="computer-content">
-          <div class="computer-score">
-            <h3>Computer Score:</h3>
-            <h3 id="computerScore"></h3>
+          <div class="result-winner-content">
+            <div class="winner">
+              <h3 id="winner"></h3>
+            </div>
+            <img
+              src="/images/question.png"
+              alt="results-image"
+              class="results-image"
+              id="results-image"
+            />
           </div>
-          <img
-            src="/images/img_paper.png"
-            alt="computer-image"
-            class="computer-image"
-            id="computer-image"
-          />
+          <div class="computer-content">
+            <div class="computer-score">
+              <h3>Computer Score:</h3>
+              <h3 id="computerScore"></h3>
+            </div>
+            <img
+              src="/images/question.png"
+              alt="computer-image"
+              class="computer-image"
+              id="computer-image"
+            />
+          </div>
         </div>
       </div>
     </div>
