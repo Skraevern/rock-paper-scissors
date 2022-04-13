@@ -10,16 +10,46 @@
   <body>
     <div class="header">
       <h1>Rock Paper Scissor</h1>
-      <p>You VS Computer</p>
-      <p>First to 5 points wins</p>
-      <button id="btn-new-game">New Game</button>
+      <p class="header-txt">You VS Computer</p>
+      <p class="header-txt">First to 5 points wins!</p>
+      <div class="btn-new-game-and-text">
+        <p class="text-over-btns">Make your choice!</p>
+        <p>Player Score:</p>
+        <p id="playerScore"></p>
+        <p>Computer Score:</p>
+        <p id="computerScore"></p>
+        <h3 id="winner"></h3>
+      </div>
     </div>
-    <div class="play-buttons">
-      <button id="btn-rock"></button>
-      <button id="btn-paper"></button>
-      <button id="btn-scissors"></button>
+    <div class="play-content">
+      <div class="play-buttons">
+        <button id="btn-rock"></button>
+        <button id="btn-paper"></button>
+        <button id="btn-scissors"></button>
+      </div>
+      <div class="play-content-without-btns">
+        <img
+          src="/images/img_paper.png"
+          alt="player-image"
+          class="player-image"
+          id="player-image"
+        />
+        <img
+          src="/images/player_wins.png"
+          alt="results-image"
+          class="results-image"
+          id="results-image"
+        />
+        <img
+          src="/images/img_paper.png"
+          alt="computer-image"
+          class="computer-image"
+          id="computer-image"
+        />
+      </div>
     </div>
     <div>
+      <button id="btn-new-game">New Game</button>
       <h2>Score</h2>
       <p>Player Score:</p>
       <p id="playerScore"></p>

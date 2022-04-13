@@ -8,6 +8,9 @@ const btnRock = document.getElementById(`btn-rock`);
 const btnPaper = document.getElementById(`btn-paper`);
 const btnScissors = document.getElementById(`btn-scissors`);
 const btnNewGame = document.getElementById(`btn-new-game`);
+let playerImage = document.getElementById(`player-image`);
+let computerImage = document.getElementById(`computer-image`);
+let resultsImage = document.getElementById(`results-image`);
 
 displayPlayerScore.textContent = playerScore;
 displayComputerScore.textContent = computerScore;
@@ -57,12 +60,15 @@ const newGame = function () {
 let computerPlay = function () {
   let randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
+    computerImage.src = "./images/img_rock.png";
     return `Rock`;
   }
   if (randomNumber === 1) {
+    computerImage.src = "./images/img_paper.png";
     return `Paper`;
   }
   if (randomNumber === 2) {
+    computerImage.src = "./images/img_scissors.png";
     return `Scissors`;
   }
 };
@@ -71,27 +77,34 @@ let computerPlay = function () {
 let game = function (player, computer) {
   console.log(player, computer);
   if (player === computer) {
+    resultsImage.src = "./images/draw.png";
     return;
   }
   if (player === `Rock`) {
     if (computer === `Scissors`) {
       playerScoreFunction(1);
+      resultsImage.src = "./images/player_wins.png";
     } else {
       computerScoreFunction(1);
+      resultsImage.src = "./images/computer_wins.png";
     }
   }
   if (player === `Scissors`) {
     if (computer === `Paper`) {
       playerScoreFunction(1);
+      resultsImage.src = "./images/player_wins.png";
     } else {
       computerScoreFunction(1);
+      resultsImage.src = "./images/computer_wins.png";
     }
   }
   if (player === `Paper`) {
     if (computer === `Rock`) {
       playerScoreFunction(1);
+      resultsImage.src = "./images/player_wins.png";
     } else {
       computerScoreFunction(1);
+      resultsImage.src = "./images/computer_wins.png";
     }
   }
 
@@ -104,12 +117,15 @@ let playRound = function (playerSelection) {
 };
 
 const playRoundRock = function () {
+  playerImage.src = "./images/img_rock.png";
   return playRound(`Rock`);
 };
 const playRoundPaper = function () {
+  playerImage.src = "./images/img_paper.png";
   return playRound(`Paper`);
 };
 const playRoundScissors = function () {
+  playerImage.src = "./images/img_scissors.png";
   return playRound(`Scissors`);
 };
 

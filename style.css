@@ -10,11 +10,40 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+h1 {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+.header-txt {
+  margin: 0px;
+}
+.btn-new-game-and-text {
+  display: flex;
+  margin-left: 0px;
+  margin-right: auto;
+}
+.text-over-btns {
+  margin-left: 30px;
+}
+.play-content {
+  display: flex;
+}
+.play-content-without-btns {
+  display: flex;
+  flex: auto;
+  margin-left: 30px;
+  margin-right: auto;
+  justify-content: space-evenly;
+}
 .play-buttons {
   display: flex;
   flex-direction: column;
-  margin: 40px;
+  margin-left: 20px;
+}
+
+#btn-new-game {
+  margin: 5px auto 5px 3px;
+  align-self: inherit;
 }
 #btn-rock {
   background-image: url(images/img_rock.png);
@@ -33,5 +62,17 @@ body {
   background-position: center;
   height: 130px;
   width: 100px;
-  margin: 10px 0px 10px 0px;
+  margin: 3px 0px 3px 0px;
+}
+.player-image,
+.computer-image {
+  height: 400px;
+  width: auto;
+  margin: 3px;
+}
+.results-image {
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  margin: auto 50px auto 50px;
 }
