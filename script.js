@@ -33,12 +33,15 @@ let computerScoreFunction = function (score) {
 let checkWinner = function () {
   if (playerScore >= 5) {
     displayWinner.textContent = `Player wins!`;
-    disableButtons();
+    displayWinner.classList.add(`winner-shake`);
+    return;
   }
   if (computerScore >= 5) {
     displayWinner.textContent = `Computer wins!`;
-    disableButtons();
+    displayWinner.classList.add(`winner-shake`);
+    return;
   }
+  enableButtons();
 };
 
 // Function for disable buttons
@@ -47,20 +50,24 @@ const disableButtons = function () {
   btnPaper.disabled = true;
   btnScissors.disabled = true;
 };
+const enableButtons = function () {
+  btnRock.disabled = false;
+  btnPaper.disabled = false;
+  btnScissors.disabled = false;
+};
 
 // Function for resetting game/new game
 const newGame = function () {
+  enableButtons();
   playerScore = 0;
   computerScore = 0;
   displayPlayerScore.textContent = playerScore;
   displayComputerScore.textContent = computerScore;
-  btnRock.disabled = false;
-  btnPaper.disabled = false;
-  btnScissors.disabled = false;
   displayWinner.textContent = "";
   playerImage.src = "./images/question.png";
   computerImage.src = "./images/question.png";
   resultsImage.src = "./images/question.png";
+  displayWinner.classList.remove(`winner-shake`);
 };
 
 // Random computer selection
@@ -87,6 +94,7 @@ let delay = function (time) {
 
 // call delay function
 let rpsDelay = function () {
+  disableButtons();
   resultsImage.src = "./images/question.png";
   playerImage.src = "./images/img_rock.png";
   computerImage.src = "./images/img_rock.png";
@@ -102,7 +110,6 @@ let game = function (player, computer) {
     resultsImage.src = "./images/draw.png";
     playerImage.classList.add("shake");
     computerImage.classList.add("shake");
-    return;
   }
   if (player === `Rock`) {
     if (computer === `Scissors`) {

@@ -97,7 +97,7 @@ h1 {
   animation: shake 0.5s;
 }
 .winner-shake {
-  animation: shake 3s;
+  animation: shake 3s infinite;
 }
 
 @keyframes shake {
