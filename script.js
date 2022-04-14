@@ -19,10 +19,14 @@ displayComputerScore.textContent = computerScore;
 let playerScoreFunction = function (score) {
   playerScore += score;
   displayPlayerScore.textContent = playerScore;
+  playerImage.classList.add("shake");
+  displayPlayerScore.classList.add("shake");
 };
 let computerScoreFunction = function (score) {
   computerScore += score;
   displayComputerScore.textContent = computerScore;
+  computerImage.classList.add("shake");
+  displayComputerScore.classList.add("shake");
 };
 
 // Check winner score
@@ -76,11 +80,28 @@ let computerPlay = function () {
   }
 };
 
+// change image every 1 second after player picks function
+let delay = function (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+};
+
+// call delay function
+let rpsDelay = function () {
+  resultsImage.src = "./images/question.png";
+  playerImage.src = "./images/img_rock.png";
+  computerImage.src = "./images/img_rock.png";
+  delay(700).then(() => (playerImage.src = "./images/img_paper.png"));
+  delay(700).then(() => (computerImage.src = "./images/img_paper.png"));
+  delay(1400).then(() => (playerImage.src = "./images/img_scissors.png"));
+  delay(1400).then(() => (computerImage.src = "./images/img_scissors.png"));
+};
 // Game
 let game = function (player, computer) {
   console.log(player, computer);
   if (player === computer) {
     resultsImage.src = "./images/draw.png";
+    playerImage.classList.add("shake");
+    computerImage.classList.add("shake");
     return;
   }
   if (player === `Rock`) {
@@ -117,19 +138,26 @@ let game = function (player, computer) {
 
 let playRound = function (playerSelection) {
   game(playerSelection, computerPlay());
+  delay(500).then(() => playerImage.classList.remove("shake"));
+  delay(500).then(() => computerImage.classList.remove("shake"));
+  delay(500).then(() => displayPlayerScore.classList.remove("shake"));
+  delay(500).then(() => displayComputerScore.classList.remove("shake"));
 };
 
 const playRoundRock = function () {
-  playerImage.src = "./images/img_rock.png";
-  return playRound(`Rock`);
+  rpsDelay();
+  delay(2100).then(() => (playerImage.src = "./images/img_rock.png"));
+  delay(2100).then(() => playRound(`Rock`));
 };
 const playRoundPaper = function () {
-  playerImage.src = "./images/img_paper.png";
-  return playRound(`Paper`);
+  rpsDelay();
+  delay(2100).then(() => (playerImage.src = "./images/img_paper.png"));
+  delay(2100).then(() => playRound(`Paper`));
 };
 const playRoundScissors = function () {
-  playerImage.src = "./images/img_scissors.png";
-  return playRound(`Scissors`);
+  rpsDelay();
+  delay(2100).then(() => (playerImage.src = "./images/img_scissors.png"));
+  delay(2100).then(() => playRound(`Scissors`));
 };
 
 btnRock.addEventListener(`click`, playRoundRock);
