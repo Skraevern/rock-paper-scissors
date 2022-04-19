@@ -167,6 +167,12 @@ const playRoundScissors = function () {
   delay(2100).then(() => playRound(`Scissors`));
 };
 
+window.onload = () => {
+  playerImage.src = `./images/question.png`;
+  resultsImage.src = `./images/question.png`;
+  computerImage.src = `./images/question.png`;
+};
+
 btnRock.addEventListener(`click`, playRoundRock);
 btnPaper.addEventListener(`click`, playRoundPaper);
 btnScissors.addEventListener(`click`, playRoundScissors);
